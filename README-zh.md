@@ -43,7 +43,8 @@ pod install
 ```
 6. 下载**安全图片**并重命名为`t_s.bmp`，将安全图片拖拽到 `Info.plist`所在的文件夹下
 7. 如果你想在模拟器上调试（在 M1 芯片的 MacBook 上），请在 Pods project 中加入下图所示内容
-    ![image]() 
+    
+    <img alt="Pods" src="https://airtake-public-data-1254153901.cos.ap-shanghai.myqcloud.com/content-platform/hestia/1638348535b9dac74712e.png" width="900">
     
 **注意**: Bundle ID、 AppKey、AppSecret和安全图片必须跟你在 [涂鸦智能 IoT 平台](https://iot.tuya.com/)创建的应用保持一致，如果不一致则无法正常运行本示例工程。
 
