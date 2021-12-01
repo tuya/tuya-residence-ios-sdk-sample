@@ -1,0 +1,43 @@
+{
+  "name": "TuyaSmartResidenceSDK",
+  "version": "0.1.0",
+  "summary": "A short description of TuyaSmartResidenceSDK.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Ange/TuyaSmartResidenceSDK",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Ange": "ange.zhang@tuya.com"
+  },
+  "source": {
+    "git": "https://github.com/Ange/TuyaSmartResidenceSDK.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "TuyaSmartResidenceSDK/Classes/**/*",
+  "user_target_xcconfig": {
+    "CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES": "YES"
+  },
+  "pod_target_xcconfig": {
+    "CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES": "YES",
+    "DEFINES_MODULE": "YES"
+  },
+  "dependencies": {
+    "TuyaSmartDeviceKit": [
+      "3.31.5"
+    ],
+    "TYFoundationKit": [
+      "1.14.1"
+    ],
+    "TuyaSmartBLEMeshKit": [
+
+    ],
+    "TuyaSmartActivatorCoreKit": [
+
+    ]
+  }
+}
