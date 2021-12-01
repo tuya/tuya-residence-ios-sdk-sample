@@ -1,6 +1,0 @@
-framework module Pods_TuyaSmartResidenceSDKSample_iOS_ObjC_TuyaSmartResidenceSDKSample_iOS_ObjCUITests {
-  umbrella header "Pods-TuyaSmartResidenceSDKSample-iOS-ObjC-TuyaSmartResidenceSDKSample-iOS-ObjCUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}
