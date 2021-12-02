@@ -55,4 +55,4 @@
 
 ## 开发文档
 
-关于 智慧居住 App SDK iOS 版 的更多信息，请参考：[智慧居住 App SDK](https://developer.tuya.com/cn/docs/app-development)。
+关于 智慧居住 App SDK iOS 版 的更多信息，请参考：[智慧居住 App SDK](https://developer.tuya.com/cn/docs/app-development/saas-smart-residence-ios?id=Kb3npxylwo4dm)。

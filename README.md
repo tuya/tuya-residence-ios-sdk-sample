@@ -55,4 +55,4 @@ This sample demonstrates the use of Tuya Smart Residence App SDK to build a smar
 **Note**: The bundle ID, AppKey, AppSecret, and security image must be the same as those used for your app on the [Tuya IoT Development Platform](https://iot.tuya.com). Otherwise, API requests in the sample will fail.
 
 ## References
-For more information about Tuya Smart Residence App SDK, see [App SDK](https://developer.tuya.com/en/docs/app-development).
+For more information about Tuya Smart Residence App SDK, see [App SDK](https://developer.tuya.com/en/docs/app-development/saas-smart-residence-ios?id=Kb3npxylwo4dm).
