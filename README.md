@@ -1,10 +1,10 @@
-# Tuya Smart Residence SDK Sample in Objective-C for iOS
+# Tuya Smart Residence App SDK Sample in Objective-C for iOS
 
  [English](README.md) | [中文版](README-zh.md)
 
 ---
 
-This sample demonstrates the use of Tuya Smart Residence SDK to build a smart residence app. The SDK is divided into several functional modules to give you a clear insight into the implementation of different features, including the user registration process, site management by different users, app access management, and password access management.
+This sample demonstrates the use of Tuya Smart Residence App SDK to build a smart residence app. The SDK is divided into several functional modules to give you a clear insight into the implementation of different features, including the user registration process, site management by different users, app access management, and password access management.
 
 
 ## Prerequisites
@@ -14,7 +14,7 @@ This sample demonstrates the use of Tuya Smart Residence SDK to build a smart re
 
 ## Use the sample
 
-1. Tuya Smart Residence SDK is distributed based on [CocoaPods](http://cocoapods.org/) and other dependencies in this sample. Make sure that you have installed CocoaPods. If not, run the following command to install CocoaPods first:
+1. Tuya Smart Residence App SDK is distributed based on [CocoaPods](http://cocoapods.org/) and other dependencies in this sample. Make sure that you have installed CocoaPods. If not, run the following command to install CocoaPods first:
 
     ```bash
     sudo gem install cocoapods
@@ -27,14 +27,18 @@ This sample demonstrates the use of Tuya Smart Residence SDK to build a smart re
     pod install
     ```
 
-3. This sample requires you to get a pair of keys and a security image from [Tuya IoT Development Platform](https://developer.tuya.com/), and register a developer account on this platform if you do not have one. Then, perform the following steps:
+3. This sample requires you to get a pair of keys and a security image from [Tuya Developer Platform](https://developer.tuya.com/), and register a developer account on this platform if you do not have one. Then, perform the following steps:
 
    1. Log in to the [Tuya IoT Development Platform](https://iot.tuya.com/). In the left-side navigation pane, choose **App** > **SDK Development**.
+
    2. Click **Create** to create an app.
+
    3. Fill in the required information. Make sure that you enter the valid Bundle ID. It cannot be changed afterward.
+
    4. You can find the AppKey, AppSecret, and security image on the **Get Key** tab.
 
 4. Open the `TuyaSmartResidenceSDKSample-iOS-ObjC.xcworkspace` pod generated for you.
+
 5. Fill in the AppKey and AppSecret in the **AppDelegate.m** file.
 
     ```objective-c
@@ -51,4 +55,4 @@ This sample demonstrates the use of Tuya Smart Residence SDK to build a smart re
 **Note**: The bundle ID, AppKey, AppSecret, and security image must be the same as those used for your app on the [Tuya IoT Development Platform](https://iot.tuya.com). Otherwise, API requests in the sample will fail.
 
 ## References
-For more information about Tuya Smart Residence SDK, see [App SDK](https://developer.tuya.com/en/docs/app-development).
+For more information about Tuya Smart Residence App SDK, see [App SDK](https://developer.tuya.com/en/docs/app-development).
