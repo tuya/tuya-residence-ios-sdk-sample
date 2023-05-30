@@ -365,6 +365,8 @@
 				9FF3AD0C2727A82000C7A2DF /* Sources */,
 				9FF3AD0D2727A82000C7A2DF /* Frameworks */,
 				9FF3AD0E2727A82000C7A2DF /* Resources */,
+				2DE7E56783F1C7DB1395E43F /* [CP] Embed Pods Frameworks */,
+				86FC6878ED6F6E2C99ABA3EB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -402,6 +404,8 @@
 				9FF3AD312727A82200C7A2DF /* Sources */,
 				9FF3AD322727A82200C7A2DF /* Frameworks */,
 				9FF3AD332727A82200C7A2DF /* Resources */,
+				563C13DDB41EE6A5C4E4444E /* [CP] Embed Pods Frameworks */,
+				25CAD04B3E9D77FA004C5520 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -490,6 +494,74 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		25CAD04B3E9D77FA004C5520 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TuyaSmartResidenceSDKSample-iOS-ObjC-TuyaSmartResidenceSDKSample-iOS-ObjCUITests/Pods-TuyaSmartResidenceSDKSample-iOS-ObjC-TuyaSmartResidenceSDKSample-iOS-ObjCUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TuyaSmartResidenceSDKSample-iOS-ObjC-TuyaSmartResidenceSDKSample-iOS-ObjCUITests/Pods-TuyaSmartResidenceSDKSample-iOS-ObjC-TuyaSmartResidenceSDKSample-iOS-ObjCUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TuyaSmartResidenceSDKSample-iOS-ObjC-TuyaSmartResidenceSDKSample-iOS-ObjCUITests/Pods-TuyaSmartResidenceSDKSample-iOS-ObjC-TuyaSmartResidenceSDKSample-iOS-ObjCUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2DE7E56783F1C7DB1395E43F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TuyaSmartResidenceSDKSample-iOS-ObjC/Pods-TuyaSmartResidenceSDKSample-iOS-ObjC-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TuyaSmartResidenceSDKSample-iOS-ObjC/Pods-TuyaSmartResidenceSDKSample-iOS-ObjC-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TuyaSmartResidenceSDKSample-iOS-ObjC/Pods-TuyaSmartResidenceSDKSample-iOS-ObjC-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		563C13DDB41EE6A5C4E4444E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TuyaSmartResidenceSDKSample-iOS-ObjC-TuyaSmartResidenceSDKSample-iOS-ObjCUITests/Pods-TuyaSmartResidenceSDKSample-iOS-ObjC-TuyaSmartResidenceSDKSample-iOS-ObjCUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TuyaSmartResidenceSDKSample-iOS-ObjC-TuyaSmartResidenceSDKSample-iOS-ObjCUITests/Pods-TuyaSmartResidenceSDKSample-iOS-ObjC-TuyaSmartResidenceSDKSample-iOS-ObjCUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TuyaSmartResidenceSDKSample-iOS-ObjC-TuyaSmartResidenceSDKSample-iOS-ObjCUITests/Pods-TuyaSmartResidenceSDKSample-iOS-ObjC-TuyaSmartResidenceSDKSample-iOS-ObjCUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		86FC6878ED6F6E2C99ABA3EB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TuyaSmartResidenceSDKSample-iOS-ObjC/Pods-TuyaSmartResidenceSDKSample-iOS-ObjC-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TuyaSmartResidenceSDKSample-iOS-ObjC/Pods-TuyaSmartResidenceSDKSample-iOS-ObjC-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TuyaSmartResidenceSDKSample-iOS-ObjC/Pods-TuyaSmartResidenceSDKSample-iOS-ObjC-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		8AFF86C5A208C5E62E25F9EA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -760,7 +832,7 @@
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 38WMC42953;
+				DEVELOPMENT_TEAM = YU53J7686A;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TuyaSmartResidenceSDKSample-iOS-ObjC/PrefixHeader.pch";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "TuyaSmartResidenceSDKSample-iOS-ObjC/Info.plist";
@@ -793,7 +865,7 @@
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 38WMC42953;
+				DEVELOPMENT_TEAM = YU53J7686A;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TuyaSmartResidenceSDKSample-iOS-ObjC/PrefixHeader.pch";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "TuyaSmartResidenceSDKSample-iOS-ObjC/Info.plist";

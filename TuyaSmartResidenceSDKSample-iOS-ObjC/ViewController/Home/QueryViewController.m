@@ -58,7 +58,7 @@
         case APICodeCheckAccessAuthorization:
         {
              
-            NSString *username = @"xxx@mail.com"; // account
+            NSString *username = self.username; // account
             
             [self.access checkAccessAuthorizationWithSiteId:siteId userName:username success:^(TuyaResidenceAccessMemberType result) {
                 ty_strongify(self)
@@ -95,7 +95,7 @@
         }
         case APICodeCheckAccessAccount:
         {
-            NSString *username = @"xxx@mail.com"; // account
+            NSString *username = self.username; // account
             [self.access checkAccessAccountWithUserName:username success:^(BOOL result) {
                 ty_strongify(self)
                 
@@ -111,7 +111,7 @@
         case APICodeQueryAppAccessUserDetail:
         {
             
-            NSString *accessUserId = @""; //accessUserId from API: fetchAppAccessListWithSiteId
+            NSString *accessUserId = self.accessUserId; //accessUserId from API: fetchAppAccessListWithSiteId
             
             [self.access fetchAppAccessUserDetailWithSiteId:siteId accessUserId:accessUserId success:^(TuyaResidenceAppAccessDetailModel * _Nonnull userDetail) {
                 ty_strongify(self)
@@ -128,7 +128,7 @@
         case APICodeQueryAppAccessPassRecord:
         {
             
-            NSString *accessUserId = @""; //accessUserId from API: fetchAppAccessListWithSiteId
+            NSString *accessUserId = self.accessUserId; //accessUserId from API: fetchAppAccessListWithSiteId
             
             [self.access fetchAppAccessPassRecordWithSiteId:siteId accessUserId:accessUserId pageNo:1 pageSize:20 success:^(NSArray<TuyaResidenceAccessRecordModel *> * _Nonnull accessUserRecordList) {
                 ty_strongify(self)
@@ -162,11 +162,11 @@
         case APICodeUpdateAppAccess:
         {
             
-            NSString *accessUserId = @""; //accessUserId from API: fetchAppAccessListWithSiteId
+            NSString *accessUserId = self.accessUserId; //accessUserId from API: fetchAppAccessListWithSiteId
             NSString *nickname = @"xxx";
-            TuyaResidenceAccessUserType userType = TuyaResidenceAccessUserTypeAdmin; //TuyaResidenceAccessUserTypeMember;
-            long startTime = -1; //[[NSDate date] timeIntervalSince1970] * 1000;
-            long endTime =  -1; //([[NSDate date] timeIntervalSince1970] + 864000) * 1000;
+            TuyaResidenceAccessUserType userType = TuyaResidenceAccessUserTypeMember; //TuyaResidenceAccessUserTypeMember;
+            long startTime = [[NSDate date] timeIntervalSince1970] * 1000;
+            long endTime = ([[NSDate date] timeIntervalSince1970] + 12 * 3600 * 5) * 1000;
             
             [self.access updateAppAccessWithSiteId:siteId accessUserId:accessUserId nickName:nickname userType:userType startTime:startTime endTime:endTime success:^{
                 ty_strongify(self)
@@ -183,8 +183,8 @@
         case APICodeAddAppAccessDevice:
         {
             
-            NSString *accessUserId = @""; //accessUserId from API: fetchAppAccessListWithSiteId
-            NSArray<NSString *> *deviceIdList = @[@""]; //deviceId from API: fetchDeviceListWithSiteId
+            NSString *accessUserId = self.accessUserId; //accessUserId from API: fetchAppAccessListWithSiteId
+            NSArray<NSString *> *deviceIdList = @[self.deviceId]; //deviceId from API: fetchDeviceListWithSiteId
             
             [self.access addAppAccessDeviceWithSiteId:siteId accessUserId:accessUserId deviceIdList:deviceIdList success:^{
                 ty_strongify(self)
@@ -201,8 +201,8 @@
         case APICodeRemoveAppAccessDevice:
         {
             
-            NSString *accessUserId = @""; //accessUserId from API: fetchAppAccessListWithSiteId
-            NSString *deviceId = @""; //deviceId from API: fetchDeviceListWithSiteId
+            NSString *accessUserId = self.accessUserId; //accessUserId from API: fetchAppAccessListWithSiteId
+            NSString *deviceId = self.deviceId; //deviceId from API: fetchDeviceListWithSiteId
             
             [self.access removeAppAccessDeviceWithSiteId:siteId accessUserId:accessUserId deviceId:deviceId success:^{
                 ty_strongify(self)
@@ -219,7 +219,7 @@
         case APICodeRemoveAppAccess:
         {
             
-            NSString *accessUserId = @""; //accessUserId from API: fetchAppAccessListWithSiteId
+            NSString *accessUserId = self.accessUserId; //accessUserId from API: fetchAppAccessListWithSiteId
             
             [self.access removeAppAccessWithSiteId:siteId accessUserId:accessUserId success:^{
                 ty_strongify(self)
@@ -236,7 +236,7 @@
         case APICodeQueryPasswordAccessUserDetail:
         {
             
-            NSString *authGroupId = @""; // authGroupId from API: fetchPasswordAccessListWithSiteId
+            NSString *authGroupId = self.authGroupId; // authGroupId from API: fetchPasswordAccessListWithSiteId
             
             [self.access fetchPasswordAccessUserDetailWithSiteId:siteId authGroupId:authGroupId success:^(TuyaResidencePasswordAccessModel * _Nonnull accessPasswordModel) {
                 ty_strongify(self)
@@ -253,7 +253,7 @@
         case APICodeQueryPasswordAccessPassRecord:
         {
             
-            NSString *authGroupId = @""; // authGroupId from API: fetchPasswordAccessListWithSiteId
+            NSString *authGroupId = self.authGroupId; // authGroupId from API: fetchPasswordAccessListWithSiteId
             
             [self.access fetchPasswordAccessPassRecordWithSiteId:siteId authGroupId:authGroupId pageNo:1 pageSize:20 success:^(NSArray<TuyaResidenceAccessRecordModel *> * _Nonnull accessUserRecordList) {
                 ty_strongify(self)
@@ -287,8 +287,8 @@
         case APICodeAddPasswordAccessDevice:
         {
             
-            NSString *authGroupId = @""; // authGroupId from API: fetchPasswordAccessListWithSiteId
-            NSArray<NSString *> *deviceIdList = @[@""]; //deviceId from API: fetchDeviceListWithSiteId
+            NSString *authGroupId = self.authGroupId; // authGroupId from API: fetchPasswordAccessListWithSiteId
+            NSArray<NSString *> *deviceIdList = @[self.deviceId]; //deviceId from API: fetchDeviceListWithSiteId
             
             [self.access addPasswordAccessDeviceWithSiteId:siteId authGroupId:authGroupId deviceIdList:deviceIdList success:^{
                 ty_strongify(self)
@@ -305,8 +305,8 @@
         case APICodeRemovePasswordAccessDevice:
         {
             
-            NSString *authGroupId = @""; // authGroupId from API: fetchPasswordAccessListWithSiteId
-            NSString *deviceId = @""; //deviceId from API: fetchDeviceListWithSiteId
+            NSString *authGroupId = self.authGroupId; // authGroupId from API: fetchPasswordAccessListWithSiteId
+            NSString *deviceId = self.deviceId; //deviceId from API: fetchDeviceListWithSiteId
             
             // fetch the device information
             TuyaSmartDevice *device = [TuyaSmartDevice deviceWithDeviceId:deviceId];
@@ -328,7 +328,7 @@
         case APICodeRemovePasswordAccess:
         {
              
-            NSString *authGroupId = @""; // authGroupId from API: fetchPasswordAccessListWithSiteId
+            NSString *authGroupId = self.authGroupId; // authGroupId from API: fetchPasswordAccessListWithSiteId
             
             [self.access removePasswordAccessWithSiteId:siteId authGroupId:authGroupId success:^{
                 ty_strongify(self)
@@ -345,7 +345,7 @@
         case APICodeUpdatePasswordAccessValidity:
         {
              
-            NSString *authGroupId = @""; // authGroupId from API: fetchPasswordAccessListWithSiteId
+            NSString *authGroupId = self.authGroupId; // authGroupId from API: fetchPasswordAccessListWithSiteId
             TuyaResidenceBasePasswordInfoModel *doorModel = [[TuyaResidenceBasePasswordInfoModel alloc] init];
             doorModel.authType = TuyaResidencePasswordAuthTypeTemporary;
             doorModel.authName = @"xxx";
@@ -377,7 +377,7 @@
         case APICodeUpdatePasswordAccessNickname:
         {
              
-            NSString *authGroupId = @""; // authGroupId from API: fetchPasswordAccessListWithSiteId
+            NSString *authGroupId = self.authGroupId; // authGroupId from API: fetchPasswordAccessListWithSiteId
             NSString *nickname = @"xxx";
             
             [self.access updatePasswordAccessNicknameWithSiteId:siteId authGroupId:authGroupId nickName:nickname success:^{

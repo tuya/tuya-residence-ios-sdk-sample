@@ -67,7 +67,7 @@
     return cell;
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
     TuyaSmartDeviceModel *model = self.dataArray[indexPath.row];
@@ -106,8 +106,8 @@
     reqModel.username = userName;
     reqModel.nickname = nickname;
     reqModel.deviceIdList = deviceIdList;
-    reqModel.startTime = -1;
-    reqModel.endTime = -1;
+    reqModel.startTime = [[NSDate date] timeIntervalSince1970] * 1000;
+    reqModel.endTime = [[NSDate date] timeIntervalSince1970] *1000 + 24 * 3600 * 5 * 1000;
     reqModel.userType = TuyaResidenceAccessUserTypeMember;
     
     ty_weakify(self);

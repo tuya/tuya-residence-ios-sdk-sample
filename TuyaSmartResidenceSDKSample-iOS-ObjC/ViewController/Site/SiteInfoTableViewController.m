@@ -5,7 +5,7 @@
 //  Copyright (c) 2014-2021 Tuya Inc. (https://developer.tuya.com/)
 
 #import "SiteInfoTableViewController.h"
-#import <TuyaSmartResidenceKit/TuyaResidenceSiteMemberModel.h>
+#import <TuyaSmartResidenceKit/TuyaSmartResidenceKit.h>
 
 @interface SiteInfoTableViewController ()
 
@@ -59,6 +59,7 @@
     
     [self.site fetchSiteDetailWithSuccess:^(TuyaResidenceSiteModel * _Nonnull siteModel) {
         NSAssert(siteModel, @"failure");
+        [self.tableView reloadData];
     } failure:^(NSError *error) {
         [SVProgressHUD showErrorWithStatus:error.localizedDescription];
     }];
@@ -75,13 +76,15 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
-        return _roomArray.count;
+        return self.site.deviceList.count;
     } else if (section == 1) {
+        return _roomArray.count;
+    } else if (section == 2){
         return _residenceArray.count;
     } else {
         return 1;
@@ -93,10 +96,25 @@
     cell.accessoryType = UITableViewCellAccessoryNone;
     
     NSString *text;
+    NSString *detailText;
     if (indexPath.section == 0) {
+        TuyaSmartDeviceModel *deviceModel = self.site.deviceList[indexPath.row];
+        text = deviceModel.name;
+        
+        if ([deviceModel isPublicAreaDevice] && [deviceModel isAccessDevice]) {
+            detailText = @"public area access device";
+        } else if ([deviceModel isPublicAreaDevice] && ![deviceModel isAccessDevice]) {
+            detailText = @"public area normal device";
+        } else if (![deviceModel isPublicAreaDevice] && [deviceModel isAccessDevice]) {
+            detailText = @"room access device";
+        } else if (![deviceModel isPublicAreaDevice] && ![deviceModel isAccessDevice]) {
+            detailText = @"room normal device";
+        }
+        
+    } else if (indexPath.section == 1) {
         NSString *name = _roomArray[indexPath.row][@"name"];
         text = name;
-    } else if (indexPath.section == 1) {
+    } else if (indexPath.section == 2) {
         TuyaResidenceSiteMemberModel *model = _residenceArray[indexPath.row];
         text = model.name;
     } else {
@@ -104,13 +122,17 @@
     }
     
     cell.textLabel.text = text;
+    cell.detailTextLabel.text = detailText;
+    cell.detailTextLabel.hidden = NO;
     return cell;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     if (section == 0) {
-        return @"Room";
+        return @"Device";
     } else if (section == 1) {
+        return @"Room";
+    } else if (section == 2) {
         return @"Residence";
     } else {
         return @"Current Member";
@@ -124,7 +146,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    if (indexPath.section == 1) {
+    if (indexPath.section == 2) {
         UIAlertController *alertViewController = [UIAlertController alertControllerWithTitle:@"remove memeber" message:@"" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *confirm = [UIAlertAction actionWithTitle:@"Confirm" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             TuyaResidenceSiteMemberModel *model = self.residenceArray[indexPath.row];
