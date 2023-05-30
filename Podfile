@@ -3,7 +3,7 @@ target 'TuyaSmartResidenceSDKSample-iOS-ObjC' do
 
   pod 'SVProgressHUD'
   pod 'YYModel'
-  pod 'TuyaSmartResidenceKit', '~> 1.0.0'
+  pod 'TuyaSmartResidenceKit', '~> 1.2.0'
   
   target 'TuyaSmartResidenceSDKSample-iOS-ObjCTests' do
     inherit! :search_paths

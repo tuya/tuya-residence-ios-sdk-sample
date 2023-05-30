@@ -66,6 +66,20 @@
     NSMutableString *info = [NSMutableString string];
     [info appendString:@"site ID: "];
     [info appendFormat:@"%lld\n", site.siteModel.siteId];
+    
+    [info appendString:@"site Type: "];
+
+    NSString *siteType = nil;
+    
+    if (site.siteModel.siteType == TYSmartSiteType_Home) {
+        siteType = @"C Site";
+    } else if (site.siteModel.siteType == TYSmartSiteType_Bisiness){
+        siteType = @"Bisiness Site";
+    } else if (site.siteModel.siteType == TYSmartSiteType_Access) {
+        siteType = @"Access Site";
+    }
+    [info appendFormat:@"%@\n", siteType];
+    
     [info appendString:@"site name: "];
     [info appendFormat:@"%@\n", site.siteModel.name];
     [info appendString:@"city name: "];

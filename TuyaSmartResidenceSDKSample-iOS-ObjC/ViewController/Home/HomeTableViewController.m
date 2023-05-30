@@ -83,14 +83,61 @@
     UIViewController *desViewController = segue.destinationViewController;
     
     if ([desViewController isKindOfClass:[QueryViewController class]] && [sender isKindOfClass:[UITableViewCell class]]) {
-        QueryViewController *vc = (QueryViewController *)desViewController;
+        __block UITextField *uidTextField;
+        __block UITextField *emailTextField;
+        __block UITextField *authGroupIdTextField;
+        __block UITextField *deviceIdTextField;
         
-        UITableViewCell *cell = (UITableViewCell *)sender;
-        NSInteger tag = cell.tag;
-        NSString *title = cell.textLabel.text;
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:@"Change Nickname" preferredStyle:UIAlertControllerStyleAlert];
+        [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+            textField.placeholder = @"enter accessUid";
+            uidTextField = textField;
+            
+        }];
         
-        vc.apiCode = tag;
-        vc.title = title;
+        [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+            textField.placeholder = @"enter username";
+            emailTextField = textField;
+            
+        }];
+        
+        [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+            textField.placeholder = @"enter authGroupId";
+            authGroupIdTextField = textField;
+        }];
+        
+        [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+            textField.placeholder = @"enter deviceId";
+            deviceIdTextField = textField;
+        }];
+        
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            
+        }];
+    
+        UIAlertAction *saveAction = [UIAlertAction actionWithTitle:@"Save" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+
+            QueryViewController *vc = (QueryViewController *)desViewController;
+            
+            UITableViewCell *cell = (UITableViewCell *)sender;
+            NSInteger tag = cell.tag;
+            NSString *title = cell.textLabel.text;
+            
+            vc.apiCode = tag;
+            
+            vc.accessUserId = uidTextField.text;
+            vc.username = emailTextField.text;
+            vc.authGroupId = authGroupIdTextField.text;
+            vc.deviceId = deviceIdTextField.text;
+            
+            vc.title = title;
+            [self.navigationController pushViewController:vc animated:YES];
+        }];
+        
+        [alertController addAction:cancelAction];
+        [alertController addAction:saveAction];
+        
+        [self presentViewController:alertController animated:YES completion:nil];
     }
 }
 

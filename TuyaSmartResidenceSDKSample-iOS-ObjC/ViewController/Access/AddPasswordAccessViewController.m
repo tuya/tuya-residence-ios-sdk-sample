@@ -74,7 +74,7 @@
     return cell;
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
     TuyaSmartDeviceModel *model = self.dataArray[indexPath.row];
@@ -127,7 +127,7 @@
     passwordInfo.authName = [NSString stringWithFormat:@"%@-password", nickname];
     passwordInfo.passwordValue = self.passwordTextField.text;
     passwordInfo.effectiveTime = (long)([[NSDate date] timeIntervalSince1970] * 1000);
-    passwordInfo.invalidTime = (long)(([[NSDate date] timeIntervalSince1970] + 432000) * 1000); // Within 5 days
+    passwordInfo.invalidTime = (long)(([[NSDate date] timeIntervalSince1970] + 5 * 12 * 3600) * 1000); // Within 5 days
     passwordInfo.scheduleRepeat = 0;
     
     // Activation Plan

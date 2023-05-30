@@ -32,6 +32,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface QueryViewController : UIViewController
 @property (nonatomic, assign) APICode apiCode;
+
+@property (nonatomic, copy) NSString *username;
+
+@property (nonatomic, copy) NSString *accessUserId;
+
+@property (nonatomic, copy) NSString *authGroupId;
+
+@property (nonatomic, copy) NSString *deviceId;
+
 @end
 
 NS_ASSUME_NONNULL_END
